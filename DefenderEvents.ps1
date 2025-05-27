@@ -87,7 +87,7 @@ function Get-DefenderEvents {
                     $filePath = ($eventXml.Event.EventData.Data | Where-Object { $_.Name -eq 'Path' }).'#text'
                     if ($filePath -match 'file:_([^;]+)') {
                         $path = $matches[1].Trim()
-                        Format-EventRow -Time $timestamp -Type "Threat Detected" -Message $path -Color Magenta
+                        Format-EventRow -Time $timestamp -Type "Threat Detected" -Message $path -Color DarkRed
                     }
                 }
             }
